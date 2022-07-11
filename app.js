@@ -122,12 +122,6 @@ async function addRole() {
             name: "salary",
             message: "What is the salary of the role you'd like to add?",
         },
-        // {
-        //     type: "input",
-        //     name: "choice",
-        //     message: "What is the department this role is in?",
-        //     choices,
-        // },
     ]);
 
   // const salaryInt = parseInt(response.salary);
