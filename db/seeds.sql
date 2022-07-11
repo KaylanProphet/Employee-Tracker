@@ -1,3 +1,4 @@
+-- Active: 1657555769120@@127.0.0.1@3306@employee_tracker_db
 USE employee_tracker_db;
 
 INSERT INTO department (name)
