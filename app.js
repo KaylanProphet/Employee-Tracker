@@ -15,7 +15,7 @@ const consoleTable = require("console.table");
 
 // Main question prompt
 async function questionPrompt() {
-    const response = await prompt ({
+    const response = await prompt({
         type: "list",
         name: "choice",
         message: "What would you like to do?",
@@ -53,28 +53,30 @@ async function questionPrompt() {
                 value: "exit",
             },
         ]
+    }).then(response => {
+        const choice = response.choice;
+console.log("choice");
+
+        switch (choice) {
+            case "view_departments":
+                return viewDepartments();
+            case "view_roles":
+                return viewRoles();
+            case "view_employees":
+                return viewEmployees();
+            case "add_department":
+                return addDepartment();
+            case "add_role":
+                return addRole();
+            case "add_employee":
+                return addEmployee();
+            case "update_employees":
+                return updateEmployees();  
+            case "exit":
+                return quit();
+        }
+
     });
-
-    const choice = response.choice;
-
-    switch (choice) {
-        case "view_departments":
-            return viewDepartments();
-        case "view_roles":
-            return viewRoles();
-        case "view_employees":
-            return viewEmployees();
-        case "add_department":
-            return addDepartment();
-        case "add_role":
-            return addRole();
-        case "add_employee":
-            return addEmployee();
-        case "update_employees":
-            return updateEmployees();  
-        case "exit":
-            return quit();         
-    }
 }
 
 // Add data to console.table

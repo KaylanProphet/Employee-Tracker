@@ -1,10 +1,11 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 require("dotenv").config();
+console.log("process.env.password: ", process.env.password);
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: process.env.password,
+  password: "rootroot",
   database: "employee_tracker_db",
 });
 
